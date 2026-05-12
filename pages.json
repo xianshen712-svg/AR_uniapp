@@ -13,6 +13,15 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-card-list/index",
+			"style": {
+				"navigationBarTitleText": "XR能力演示",
+				"navigationBarBackgroundColor": "#667eea",
+				"navigationBarTextStyle": "white",
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/xrframe/index",
 			"style": {
 				"navigationStyle": "custom",

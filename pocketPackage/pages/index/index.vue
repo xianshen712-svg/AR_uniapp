@@ -24,8 +24,8 @@
                 <view class="weui-panel__bd">
                     <view class="weui-media-box weui-media-box_text">
                         <view class="weui-media-box__info">
-                            <navigator url="/pocketPackage/pages/xrframe/index" class="marginTop10">
-                                <button class="weui-btn" type="warn">开始 XR-Frame</button>
+                            <navigator url="/pocketPackage/pages/xr-card-list/index" class="marginTop10">
+                                <button class="weui-btn" type="warn">XR 能力演示</button>
                             </navigator>
                         </view>
                     </view>
