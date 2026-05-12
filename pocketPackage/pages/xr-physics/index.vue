@@ -56,8 +56,7 @@
                     <view 
                         v-for="(type, index) in objectTypes" 
                         :key="index"
-                        class="object-option"
-                        :class="['object-type-btn', selectedObjectType === type.id ? 'active' : '']"
+                        :class="getObjectTypeClass(type)"
                         @tap="selectObjectType(type)"
                     >
                         <text class="object-icon-small">{{ type.icon }}</text>
@@ -187,6 +186,9 @@ export default {
                 icon: 'none',
                 duration: 1000
             });
+        },
+        getObjectTypeClass(type) {
+            return this.selectedObjectType === type.id ? 'object-option object-type-btn active' : 'object-option object-type-btn';
         },
         onGravityChange(e) {
             this.gravity = e.detail.value;

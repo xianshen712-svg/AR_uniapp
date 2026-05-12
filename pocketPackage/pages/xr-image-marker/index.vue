@@ -52,7 +52,7 @@
                     <view 
                         v-for="(marker, index) in availableMarkers" 
                         :key="index"
-                        :class="['marker-item', (detectedMarker && detectedMarker.id === marker.id) ? 'active' : '']"
+                        :class="getMarkerClass(marker)"
                         @tap="selectMarker(marker)"
                     >
                         <view class="marker-preview">{{ marker.icon }}</view>
@@ -148,6 +148,13 @@ export default {
                 icon: 'none',
                 duration: 1500
             });
+        },
+        getMarkerClass(marker) {
+            var isActive = false;
+            if (this.detectedMarker && this.detectedMarker.id === marker.id) {
+                isActive = true;
+            }
+            return isActive ? 'marker-item active' : 'marker-item';
         },
         showMarkerGuide() {
             uni.showModal({
