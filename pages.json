@@ -30,6 +30,14 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-ar-plane/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/xrframe/index",
 			"style": {
 				"navigationStyle": "custom",
