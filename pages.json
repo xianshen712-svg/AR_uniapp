@@ -57,6 +57,46 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-video-texture/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-hand-tracking/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-image-marker/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-3dof-tracking/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-physics/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/camera/camera",
 			"style": {
 				"navigationBarTitleText": "",
