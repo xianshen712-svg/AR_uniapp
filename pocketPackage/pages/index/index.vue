@@ -1,9 +1,9 @@
 <template>
     <view class="page">
         <view class="page__bd">
-            <!-- Plane Track -->
+            <!-- 当前 AR (VK Session + Three.js) -->
             <view class="weui-panel">
-                <view class="weui-panel__hd">AR高级-对手机有要求</view>
+                <view class="weui-panel__hd">当前 AR（VK + Three.js）</view>
                 <view class="weui-panel__bd">
                     <view class="weui-media-box weui-media-box_text">
                         <view class="weui-media-box__info">
@@ -11,14 +11,26 @@
                                 url="/pocketPackage/pages/camera/camera?model=https://uniapp.anxunxinxi.cn/model/RobotExpressive.glb&&printShow=1&modelMp3Url=https://wifi.pro.youzewang.com/y860.mp3&scenicAreaId=123&baseUrl=https://yjnft-api.test.yjkjmeta.com"
                                 class="marginTop10"
                             >
-                                <button class="weui-btn" type="primary">开始</button>
+                                <button class="weui-btn" type="primary">开始当前 AR</button>
                             </navigator>
                         </view>
                     </view>
                 </view>
             </view>
 
-           
+            <!-- XR-Frame AR -->
+            <view class="weui-panel">
+                <view class="weui-panel__hd">XR-Frame AR（云诺插件）</view>
+                <view class="weui-panel__bd">
+                    <view class="weui-media-box weui-media-box_text">
+                        <view class="weui-media-box__info">
+                            <navigator url="/pocketPackage/pages/xrframe/index" class="marginTop10">
+                                <button class="weui-btn" type="warn">开始 XR-Frame</button>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
 </template>

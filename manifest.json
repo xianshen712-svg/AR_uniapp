@@ -54,7 +54,12 @@
                 "desc" : "你的位置信息将用于小程序位置接口的效果展示"
             }
         },
-        "plugins" : {}
+        "plugins" : {
+            "yn-xrframe" : {
+                "version" : "0.0.2",
+                "provider" : "wxf8a311db43355fea"
+            }
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true
