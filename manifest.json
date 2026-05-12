@@ -52,14 +52,14 @@
         "permission" : {
             "scope.userLocation" : {
                 "desc" : "你的位置信息将用于小程序位置接口的效果展示"
+            },
+            "scope.camera" : {
+                "desc" : "你的摄像头将用于AR功能的实时画面捕捉"
             }
         },
-        "plugins" : {
-            "yn-xrframe" : {
-                "version" : "0.0.2",
-                "provider" : "wxf8a311db43355fea"
-            }
-        }
+        "plugins" : {},
+        "requiredBackgroundModes" : ["audio"],
+        "deviceOrientation" : "portrait"
     },
     "mp-alipay" : {
         "usingComponents" : true

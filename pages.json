@@ -50,10 +50,7 @@
 			"style": {
 				"navigationStyle": "custom",
 				"disableScroll": true,
-				"usingComponents": {
-					"yn-viewer": "plugin://yn-xrframe/yn-viewer",
-					"yn-ar": "plugin://yn-xrframe/yn-ar"
-				}
+				"usingComponents": {}
 			}
 		},
 		{
