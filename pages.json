@@ -22,6 +22,14 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-basic-3d/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/xrframe/index",
 			"style": {
 				"navigationStyle": "custom",
