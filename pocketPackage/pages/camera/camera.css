@@ -1,0 +1,184 @@
+.canvas1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    width: 100rpx;
+    text-align: center;
+    color: #ccc;
+    position: absolute;
+    bottom: 360rpx;
+    left: 50%;
+    margin-left: -50rpx;
+    opacity: 0.8;
+    padding: 8rpx 0;
+}
+.btn.active {
+    color: #fff;
+    opacity: 1;
+}
+.btn.btn-right {
+    margin-left: 100rpx;
+}
+.btn.btn-left {
+    margin-left: -200rpx;
+}
+
+.bottom-img {
+    width: 168rpx;
+    height: 168rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -84rpx;
+    bottom: 140rpx;
+}
+.bottom-img.active {
+    opacity: 0.6;
+}
+
+.arrow {
+    position: fixed;
+    z-index: 1000;
+    width: 100rpx;
+    height: 100rpx;
+}
+.arrow.top {
+    top: 80px;
+    bottom: auto;
+}
+.arrow.bottom {
+    top: auto;
+    bottom: 0;
+}
+.arrow.right {
+    right: 0;
+    left: auto;
+}
+.arrow.left {
+    left: 0;
+    right: auto;
+}
+
+.time {
+    background: #bc0000;
+    color: #fff;
+    font-size: 28rpx;
+    padding: 8rpx 0;
+    width: 100rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    z-index: 1000;
+    position: absolute;
+    top: 120rpx;
+    left: 50%;
+    margin-left: -50rpx;
+}
+
+.full {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    left: 0;
+    top: 0;
+}
+
+.download-btn {
+    position: absolute;
+    bottom: 160rpx;
+    width: 342rpx;
+    height: 96rpx;
+    left: 50%;
+    margin-left: -171rpx;
+    z-index: 10000;
+}
+
+.loading-col {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+}
+.loading-col .loading-ar {
+    width: 600rpx;
+    height: 632rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -300rpx;
+    top: 50%;
+    margin-top: -340rpx;
+}
+
+.print-btn {
+    position: absolute;
+    bottom: 300rpx;
+    width: 342rpx;
+    height: 96rpx;
+    left: 50%;
+    margin-left: -171rpx;
+    z-index: 10000;
+}
+
+.loading {
+    position: absolute;
+    top: 40%;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.loading .loading-img {
+    width: 240rpx;
+    height: 176rpx;
+    display: block;
+    margin: 0 auto;
+}
+.loading .text {
+    padding: 8rpx 0;
+}
+
+.reset {
+    position: absolute;
+    z-index: 10;
+    right: 48rpx;
+    bottom: 500rpx;
+    width: 82rpx;
+    height: 82rpx;
+}
+
+.voice {
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    z-index: 100;
+    right: 60rpx;
+    top: 220rpx;
+}
+
+.loading-progress {
+    width: 400rpx;
+    height: 28rpx;
+    border: 4rpx solid #fff;
+    border-radius: 20rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200rpx;
+    margin-top: 20rpx;
+    box-sizing: border-box;
+    padding: 2rpx 2rpx;
+}
+.progress-col {
+    background: #fff;
+    height: 16rpx;
+    display: block;
+
+    border-radius: 18rpx;
+    box-sizing: border-box;
+}

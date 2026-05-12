@@ -1,0 +1,46 @@
+{
+	"pages": [
+		{
+			"path": "pocketPackage/pages/index/index",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/webview/index",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/camera/camera",
+			"style": {
+				"navigationBarTitleText": "",
+				"disableScroll": true,
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"usingComponents": {}
+			}
+		}
+	],
+	"sitemapLocation": "sitemap.json",
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "小程序AR",
+		"navigationBarTextStyle": "black"
+	},
+	"subPackages": [
+		{
+			"root": "printPackage",
+			"pages": [
+				{
+					"path": "pages/selectPrinter/selectPrinter",
+					"style": {
+						"usingComponents": {}
+					}
+				}
+			]
+		}
+	]
+}
