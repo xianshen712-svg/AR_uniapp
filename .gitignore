@@ -28,3 +28,6 @@ transform.log
 screenshot/
 assets/
 xr-frame-demo/
+
+# Trae 配置目录（忽略整个目录及其所有文件）
+.trae/
