@@ -1,4 +1,4 @@
-<template>
+1<template>
     <view class="ar-page">
         <yn-viewer :showBackBtn="true" @back="handleBack">
             <yn-ar
