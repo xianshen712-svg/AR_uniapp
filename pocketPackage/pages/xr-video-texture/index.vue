@@ -84,8 +84,7 @@
                     <view 
                         v-for="(video, index) in videoList" 
                         :key="index"
-                        class="video-option"
-                        :class="{ active: selectedVideoIndex === index }"
+                        :class="['video-option', selectedVideoIndex === index ? 'active' : '']"
                         @tap="selectVideo(index)"
                     >
                         <text class="video-icon">{{ video.icon }}</text>

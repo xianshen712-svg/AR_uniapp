@@ -33,7 +33,7 @@
         </view>
 
         <view class="dof-controls">
-            <view class="control-btn" :class="{ active: isTracking }" @tap="toggleTracking">
+            <view :class="['control-btn', isTracking ? 'active' : '']" @tap="toggleTracking">
                 <text class="control-icon">{{ isTracking ? '⏹️' : '🎯' }}</text>
                 <text class="control-text">{{ isTracking ? '停止追踪' : '开始追踪' }}</text>
             </view>

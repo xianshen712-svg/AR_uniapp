@@ -35,7 +35,7 @@
         </view>
 
         <view class="marker-controls">
-            <view class="control-btn" :class="{ active: isScanning }" @tap="toggleScan">
+            <view :class="['control-btn', isScanning ? 'active' : '']" @tap="toggleScan">
                 <text class="control-icon">{{ isScanning ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isScanning ? '停止扫描' : '开始扫描' }}</text>
             </view>
@@ -52,8 +52,7 @@
                     <view 
                         v-for="(marker, index) in availableMarkers" 
                         :key="index"
-                        class="marker-item"
-                        :class="{ active: detectedMarker?.id === marker.id }"
+                        :class="['marker-item', (detectedMarker && detectedMarker.id === marker.id) ? 'active' : '']"
                         @tap="selectMarker(marker)"
                     >
                         <view class="marker-preview">{{ marker.icon }}</view>

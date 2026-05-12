@@ -47,7 +47,7 @@
         </view>
 
         <view class="hand-controls">
-            <view class="control-btn" :class="{ active: isDetecting }" @tap="toggleDetection">
+            <view :class="['control-btn', isDetecting ? 'active' : '']" @tap="toggleDetection">
                 <text class="control-icon">{{ isDetecting ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isDetecting ? '停止识别' : '开始识别' }}</text>
             </view>

@@ -36,7 +36,7 @@
         </view>
 
         <view class="ar-controls">
-            <view class="control-btn" :class="{ active: isScanning }" @tap="toggleScan">
+            <view :class="['control-btn', isScanning ? 'active' : '']" @tap="toggleScan">
                 <text class="control-icon">{{ isScanning ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isScanning ? '停止扫描' : '开始扫描' }}</text>
             </view>

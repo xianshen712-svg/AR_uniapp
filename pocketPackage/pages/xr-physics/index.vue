@@ -57,7 +57,7 @@
                         v-for="(type, index) in objectTypes" 
                         :key="index"
                         class="object-option"
-                        :class="{ active: selectedObjectType === type.id }"
+                        :class="['object-type-btn', selectedObjectType === type.id ? 'active' : '']"
                         @tap="selectObjectType(type)"
                     >
                         <text class="object-icon-small">{{ type.icon }}</text>
