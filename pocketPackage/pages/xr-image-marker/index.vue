@@ -35,7 +35,7 @@
         </view>
 
         <view class="marker-controls">
-            <view :class="['control-btn', isScanning ? 'active' : '']" @tap="toggleScan">
+            <view :class="isScanning ? 'control-btn active' : 'control-btn'" @tap="toggleScan">
                 <text class="control-icon">{{ isScanning ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isScanning ? '停止扫描' : '开始扫描' }}</text>
             </view>
@@ -52,7 +52,7 @@
                     <view 
                         v-for="(marker, index) in availableMarkers" 
                         :key="index"
-                        :class="getMarkerClass(marker)"
+                        :class="marker.id === selectedMarkerId ? 'marker-item active' : 'marker-item'"
                         @tap="selectMarker(marker)"
                     >
                         <view class="marker-preview">{{ marker.icon }}</view>
@@ -81,6 +81,7 @@ export default {
             scanProgress: 0,
             scanTimer: null,
             detectedMarker: null,
+            selectedMarkerId: null,
             availableMarkers: [
                 { id: 1, name: '二维码', icon: '📱', description: '扫描二维码获取信息' },
                 { id: 2, name: '海报', icon: '🖼️', description: '识别海报展示详情' },
@@ -134,6 +135,7 @@ export default {
         detectRandomMarker() {
             const randomMarker = this.availableMarkers[Math.floor(Math.random() * this.availableMarkers.length)];
             this.detectedMarker = randomMarker;
+            this.selectedMarkerId = randomMarker.id;
             
             uni.showToast({
                 title: `识别成功: ${randomMarker.name}`,
@@ -143,18 +145,12 @@ export default {
         },
         selectMarker(marker) {
             this.detectedMarker = marker;
+            this.selectedMarkerId = marker.id;
             uni.showToast({
                 title: `已选择: ${marker.name}`,
                 icon: 'none',
                 duration: 1500
             });
-        },
-        getMarkerClass(marker) {
-            var isActive = false;
-            if (this.detectedMarker && this.detectedMarker.id === marker.id) {
-                isActive = true;
-            }
-            return isActive ? 'marker-item active' : 'marker-item';
         },
         showMarkerGuide() {
             uni.showModal({

@@ -84,7 +84,7 @@
                     <view 
                         v-for="(video, index) in videoList" 
                         :key="index"
-                        :class="getVideoOptionClass(index)"
+                        :class="selectedVideoIndex === index ? 'video-option active' : 'video-option'"
                         @tap="selectVideo(index)"
                     >
                         <text class="video-icon">{{ video.icon }}</text>
@@ -205,9 +205,6 @@ export default {
                 icon: 'none',
                 duration: 1500
             });
-        },
-        getVideoOptionClass(index) {
-            return this.selectedVideoIndex === index ? 'video-option active' : 'video-option';
         },
         switchFace() {
             const currentIndex = this.faces.indexOf(this.currentVideo);

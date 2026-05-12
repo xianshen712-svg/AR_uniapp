@@ -36,7 +36,7 @@
         </view>
 
         <view class="ar-controls">
-            <view :class="getScanBtnClass()" @tap="toggleScan">
+            <view :class="isScanning ? 'control-btn active' : 'control-btn'" @tap="toggleScan">
                 <text class="control-icon">{{ isScanning ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isScanning ? '停止扫描' : '开始扫描' }}</text>
             </view>
@@ -90,9 +90,6 @@ export default {
             } else {
                 this.stopScanning();
             }
-        },
-        getScanBtnClass() {
-            return this.isScanning ? 'control-btn active' : 'control-btn';
         },
         startScanning() {
             this.detectedPlanes = [];

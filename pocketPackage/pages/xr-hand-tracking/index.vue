@@ -47,7 +47,7 @@
         </view>
 
         <view class="hand-controls">
-            <view :class="getDetectionBtnClass()" @tap="toggleDetection">
+            <view :class="isDetecting ? 'control-btn active' : 'control-btn'" @tap="toggleDetection">
                 <text class="control-icon">{{ isDetecting ? '⏹️' : '🔍' }}</text>
                 <text class="control-text">{{ isDetecting ? '停止识别' : '开始识别' }}</text>
             </view>
@@ -129,9 +129,6 @@ export default {
             } else {
                 this.stopDetection();
             }
-        },
-        getDetectionBtnClass() {
-            return this.isDetecting ? 'control-btn active' : 'control-btn';
         },
         startDetection() {
             this.currentGesture = { icon: '🔍', name: '识别中...', description: '正在分析手部特征' };

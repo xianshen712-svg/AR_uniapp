@@ -33,7 +33,7 @@
         </view>
 
         <view class="dof-controls">
-            <view :class="getTrackingBtnClass()" @tap="toggleTracking">
+            <view :class="isTracking ? 'control-btn active' : 'control-btn'" @tap="toggleTracking">
                 <text class="control-icon">{{ isTracking ? '⏹️' : '🎯' }}</text>
                 <text class="control-text">{{ isTracking ? '停止追踪' : '开始追踪' }}</text>
             </view>
@@ -118,9 +118,6 @@ export default {
             } else {
                 this.stopTracking();
             }
-        },
-        getTrackingBtnClass() {
-            return this.isTracking ? 'control-btn active' : 'control-btn';
         },
         startTracking() {
             this.baseTime = Date.now();
