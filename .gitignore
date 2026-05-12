@@ -1,0 +1,30 @@
+# 编译输出
+unpackage/dist/
+
+# Node.js
+node_modules/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# HBuilderX
+.hbuilderx/
+
+# 微信开发者工具
+project.private.config.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+transform.log
+
+# 本地临时文件
+screenshot/
+assets/
+xr-frame-demo/
