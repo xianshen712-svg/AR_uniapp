@@ -38,6 +38,14 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-gltf-model/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/xrframe/index",
 			"style": {
 				"navigationStyle": "custom",
