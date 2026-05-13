@@ -46,6 +46,22 @@
 				"navigationBarTextStyle": "white",
 				"usingComponents": {}
 			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-gltf-dynamic/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-lighting/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
 		}
 	],
 	"sitemapLocation": "sitemap.json",

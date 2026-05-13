@@ -52,6 +52,26 @@ export default {
                     tag: 'AR',
                     tagColor: '#E5F9F8',
                     url: '/pocketPackage/pages/xr-marker-video/index'
+                },
+                {
+                    id: 'xr-gltf-dynamic',
+                    title: '动态模型加载',
+                    description: '运行时动态加载不同glTF模型',
+                    icon: '🔄',
+                    color: '#9C27B0',
+                    tag: '⭐⭐⭐',
+                    tagColor: '#F3E5F5',
+                    url: '/pocketPackage/pages/xr-gltf-dynamic/index'
+                },
+                {
+                    id: 'xr-lighting',
+                    title: '光照效果',
+                    description: '多种光源类型与参数调节',
+                    icon: '💡',
+                    color: '#FFD700',
+                    tag: '⭐⭐⭐',
+                    tagColor: '#FFF8DC',
+                    url: '/pocketPackage/pages/xr-lighting/index'
                 }
             ]
         };
