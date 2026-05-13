@@ -42,7 +42,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "wx2d65b88bbbec2fef",
+        "appid" : "your-wechat-mini-program-appid",
         "setting" : {
             "urlCheck" : false,
             "minified" : true
