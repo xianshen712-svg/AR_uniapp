@@ -39,6 +39,12 @@
 		"navigationBarTitleText": "小程序AR",
 		"navigationBarTextStyle": "black"
 	},
+	"preloadRule": {
+		"pocketPackage/pages/xr-card-list/index": {
+			"network": "all",
+			"packages": ["xrPackage"]
+		}
+	},
 	"subPackages": [
 		{
 			"root": "printPackage",

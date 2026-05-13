@@ -13,6 +13,7 @@
                 @arReady="handleARReady"
                 @markerDetected="handleMarkerDetected"
                 @markerLost="handleMarkerLost"
+                @error="handleARError"
             />
         </yn-viewer>
 
@@ -87,7 +88,8 @@ export default {
             renderWidth: 300,
             renderHeight: 300,
             arReady: false,
-            isDetected: false
+            isDetected: false,
+            loadingTimeout: null
         };
     },
     onLoad() {
@@ -96,6 +98,55 @@ export default {
         this.height = info.windowHeight;
         this.renderWidth = this.width * info.pixelRatio;
         this.renderHeight = this.height * info.pixelRatio;
+        
+        // 申请摄像头权限
+        this.requestCameraPermission();
+        
+        // 设置加载超时检测
+        this.loadingTimeout = setTimeout(() => {
+            if (!this.arReady) {
+                console.error('AR启动超时');
+                uni.showModal({
+                    title: 'AR启动超时',
+                    content: 'AR功能启动时间过长，可能是设备不支持或权限未开启。是否重试？',
+                    success: (res) => {
+                        if (res.confirm) {
+                            uni.reLaunch({
+                                url: '/xrPackage/pages/xr-marker-video/index'
+                            });
+                        }
+                    }
+                });
+            }
+        }, 10000); // 10秒超时
+    },
+    
+    onUnload() {
+        // 清除超时检测
+        if (this.loadingTimeout) {
+            clearTimeout(this.loadingTimeout);
+        }
+    },
+    
+    requestCameraPermission() {
+        uni.authorize({
+            scope: 'scope.camera',
+            success: () => {
+                console.log('摄像头权限申请成功');
+            },
+            fail: (err) => {
+                console.error('摄像头权限申请失败:', err);
+                uni.showModal({
+                    title: '需要摄像头权限',
+                    content: 'AR功能需要使用摄像头，请在设置中开启摄像头权限',
+                    success: (res) => {
+                        if (res.confirm) {
+                            uni.openSetting();
+                        }
+                    }
+                });
+            }
+        });
     },
     methods: {
         handleBack() {
@@ -103,6 +154,11 @@ export default {
         },
         handleARReady() {
             this.arReady = true;
+            // 清除超时检测
+            if (this.loadingTimeout) {
+                clearTimeout(this.loadingTimeout);
+                this.loadingTimeout = null;
+            }
             uni.showToast({
                 title: 'AR已就绪',
                 icon: 'success',
@@ -116,6 +172,14 @@ export default {
         handleMarkerLost(e) {
             this.isDetected = false;
             console.log('Marker丢失:', e.detail);
+        },
+        handleARError(e) {
+            console.error('AR错误:', e.detail);
+            uni.showToast({
+                title: 'AR启动失败: ' + (e.detail.message || '未知错误'),
+                icon: 'none',
+                duration: 3000
+            });
         }
     }
 };
