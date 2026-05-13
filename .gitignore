@@ -3,12 +3,14 @@ unpackage/dist/
 
 # Node.js
 node_modules/
+package-lock.json
 
 # IDE
 .idea/
 *.swp
 *.swo
 *~
+.vscode/
 
 # HBuilderX
 .hbuilderx/
@@ -31,3 +33,16 @@ xr-frame-demo/
 
 # Trae 配置目录（忽略整个目录及其所有文件）
 .trae/
+
+# 隐私文件
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+.env
+.env.local
+
+# 构建产物
+dist/
+build/

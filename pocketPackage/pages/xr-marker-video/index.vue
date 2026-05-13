@@ -17,7 +17,6 @@
             />
         </yn-viewer>
 
-        <!-- 扫描引导 -->
         <view class="scan-guide" v-if="!isDetected && arReady">
             <view class="scan-frame">
                 <view class="scan-corner top-left"></view>
@@ -29,7 +28,6 @@
             <view class="scan-text">请将Marker图片对准扫描框</view>
         </view>
 
-        <!-- 识别成功提示 -->
         <view class="detected-toast" v-if="isDetected">
             <view class="toast-content">
                 <text class="toast-icon">✓</text>
@@ -37,7 +35,6 @@
             </view>
         </view>
 
-        <!-- 底部信息面板 -->
         <view class="info-panel">
             <view class="info-title">📱 AR扫描播放视频</view>
             <view class="info-desc">扫描Marker图片播放视频内容</view>
@@ -71,7 +68,6 @@
             </view>
         </view>
 
-        <!-- 加载状态 -->
         <view class="loading-overlay" v-if="!arReady">
             <view class="loading-spinner"></view>
             <text class="loading-text">正在启动AR...</text>
@@ -99,10 +95,8 @@ export default {
         this.renderWidth = this.width * info.pixelRatio;
         this.renderHeight = this.height * info.pixelRatio;
         
-        // 申请摄像头权限
         this.requestCameraPermission();
         
-        // 设置加载超时检测
         this.loadingTimeout = setTimeout(() => {
             if (!this.arReady) {
                 console.error('AR启动超时');
@@ -112,17 +106,16 @@ export default {
                     success: (res) => {
                         if (res.confirm) {
                             uni.reLaunch({
-                                url: '/xrPackage/pages/xr-marker-video/index'
+                                url: '/pocketPackage/pages/xr-marker-video/index'
                             });
                         }
                     }
                 });
             }
-        }, 10000); // 10秒超时
+        }, 10000);
     },
     
     onUnload() {
-        // 清除超时检测
         if (this.loadingTimeout) {
             clearTimeout(this.loadingTimeout);
         }
@@ -154,7 +147,6 @@ export default {
         },
         handleARReady() {
             this.arReady = true;
-            // 清除超时检测
             if (this.loadingTimeout) {
                 clearTimeout(this.loadingTimeout);
                 this.loadingTimeout = null;
@@ -195,7 +187,6 @@ export default {
     background: #000;
 }
 
-/* 扫描引导 */
 .scan-guide {
     position: absolute;
     top: 50%;
@@ -270,7 +261,6 @@ export default {
     border-radius: 30rpx;
 }
 
-/* 识别成功提示 */
 .detected-toast {
     position: absolute;
     top: 200rpx;
@@ -299,7 +289,6 @@ export default {
     font-weight: bold;
 }
 
-/* 信息面板 */
 .info-panel {
     position: absolute;
     bottom: 40rpx;
@@ -425,7 +414,6 @@ export default {
     color: #666;
 }
 
-/* 加载状态 */
 .loading-overlay {
     position: fixed;
     top: 0;

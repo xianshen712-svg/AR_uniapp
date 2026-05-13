@@ -2,22 +2,19 @@
     <view class="ar-page">
         <yn-viewer :showBackBtn="true" @back="handleBack">
             <yn-ar
-                id="marker-video"
+                id="osd-marker"
                 :width="renderWidth"
                 :height="renderHeight"
                 :style="'width:' + width + 'px;height:' + height + 'px'"
-                yn_ar_mode="Marker"
-                yn_marker_url="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/xr-frame-team/2dmarker/hikari.jpg"
-                yn_video_url="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/xr-frame-team/2dmarker/hikari-v.mp4"
-                yn_camera_clear_color="0.1 0.1 0.1 1"
+                yn_ar_mode="OSD"
+                yn_marker_url="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/marker/osdmarker-test.jpg"
+                yn_camera_clear_color="0.925 0.925 0.925 1"
                 @arReady="handleARReady"
                 @markerDetected="handleMarkerDetected"
                 @markerLost="handleMarkerLost"
-                @error="handleARError"
             />
         </yn-viewer>
 
-        <!-- 扫描引导 -->
         <view class="scan-guide" v-if="!isDetected && arReady">
             <view class="scan-frame">
                 <view class="scan-corner top-left"></view>
@@ -26,21 +23,36 @@
                 <view class="scan-corner bottom-right"></view>
                 <view class="scan-line"></view>
             </view>
-            <view class="scan-text">请将Marker图片对准扫描框</view>
+            <view class="scan-text">请将物体对准扫描框</view>
         </view>
 
-        <!-- 识别成功提示 -->
-        <view class="detected-toast" v-if="isDetected">
-            <view class="toast-content">
-                <text class="toast-icon">✓</text>
-                <text class="toast-text">识别成功，正在播放视频</text>
+        <view class="info-card" v-if="isDetected">
+            <view class="card-header">
+                <view class="card-icon">🎯</view>
+                <view class="card-title">物体识别成功</view>
+            </view>
+            <view class="card-body">
+                <view class="info-item">
+                    <text class="info-label">识别模式:</text>
+                    <text class="info-value">OSD (One-shot Detection)</text>
+                </view>
+                <view class="info-item">
+                    <text class="info-label">识别结果:</text>
+                    <text class="info-value success">测试物体</text>
+                </view>
+                <view class="info-item">
+                    <text class="info-label">置信度:</text>
+                    <text class="info-value">95%</text>
+                </view>
+            </view>
+            <view class="card-footer">
+                <text class="footer-text">移开物体可重新识别</text>
             </view>
         </view>
 
-        <!-- 底部信息面板 -->
         <view class="info-panel">
-            <view class="info-title">📱 AR扫描播放视频</view>
-            <view class="info-desc">扫描Marker图片播放视频内容</view>
+            <view class="info-title">🎯 OSD物体识别</view>
+            <view class="info-desc">识别特定角度的物体并展示信息</view>
             
             <view class="status-section">
                 <view class="status-item" v-if="!arReady">
@@ -49,29 +61,38 @@
                 </view>
                 <view class="status-item" v-else-if="!isDetected">
                     <view class="status-dot scanning"></view>
-                    <text class="status-label">正在扫描Marker...</text>
+                    <text class="status-label">正在扫描物体...</text>
                 </view>
                 <view class="status-item success" v-else>
                     <view class="status-dot detected"></view>
-                    <text class="status-label">Marker已识别</text>
+                    <text class="status-label">物体已识别</text>
                 </view>
             </view>
 
-            <view class="marker-preview">
-                <view class="preview-title">Marker图片示例:</view>
-                <view class="preview-image">
-                    <text class="preview-icon">🖼️</text>
-                    <text class="preview-text">hikari.jpg</text>
+            <view class="osd-features">
+                <view class="feature-title">OSD模式特点:</view>
+                <view class="feature-list">
+                    <view class="feature-item">
+                        <text class="feature-dot">•</text>
+                        <text class="feature-text">纯屏幕空间算法</text>
+                    </view>
+                    <view class="feature-item">
+                        <text class="feature-dot">•</text>
+                        <text class="feature-text">适合识别二维、特征清晰的物体</text>
+                    </view>
+                    <view class="feature-item">
+                        <text class="feature-dot">•</text>
+                        <text class="feature-text">识别速度快，如广告牌等</text>
+                    </view>
                 </view>
             </view>
 
             <view class="info-tips">
                 <text class="tip-icon">💡</text>
-                <text class="tip-text">{{ isDetected ? '移开图片可暂停视频' : '将Marker图片对准摄像头' }}</text>
+                <text class="tip-text">{{ isDetected ? '移开物体可重新扫描' : '将物体对准摄像头进行识别' }}</text>
             </view>
         </view>
 
-        <!-- 加载状态 -->
         <view class="loading-overlay" v-if="!arReady">
             <view class="loading-spinner"></view>
             <text class="loading-text">正在启动AR...</text>
@@ -88,8 +109,7 @@ export default {
             renderWidth: 300,
             renderHeight: 300,
             arReady: false,
-            isDetected: false,
-            loadingTimeout: null
+            isDetected: false
         };
     },
     onLoad() {
@@ -98,67 +118,13 @@ export default {
         this.height = info.windowHeight;
         this.renderWidth = this.width * info.pixelRatio;
         this.renderHeight = this.height * info.pixelRatio;
-        
-        // 申请摄像头权限
-        this.requestCameraPermission();
-        
-        // 设置加载超时检测
-        this.loadingTimeout = setTimeout(() => {
-            if (!this.arReady) {
-                console.error('AR启动超时');
-                uni.showModal({
-                    title: 'AR启动超时',
-                    content: 'AR功能启动时间过长，可能是设备不支持或权限未开启。是否重试？',
-                    success: (res) => {
-                        if (res.confirm) {
-                            uni.reLaunch({
-                                url: '/xrPackage/pages/xr-marker-video/index'
-                            });
-                        }
-                    }
-                });
-            }
-        }, 10000); // 10秒超时
     },
-    
-    onUnload() {
-        // 清除超时检测
-        if (this.loadingTimeout) {
-            clearTimeout(this.loadingTimeout);
-        }
-    },
-    
     methods: {
-        requestCameraPermission() {
-            uni.authorize({
-                scope: 'scope.camera',
-                success: () => {
-                    console.log('摄像头权限申请成功');
-                },
-                fail: (err) => {
-                    console.error('摄像头权限申请失败:', err);
-                    uni.showModal({
-                        title: '需要摄像头权限',
-                        content: 'AR功能需要使用摄像头，请在设置中开启摄像头权限',
-                        success: (res) => {
-                            if (res.confirm) {
-                                uni.openSetting();
-                            }
-                        }
-                    });
-                }
-            });
-        },
         handleBack() {
             uni.navigateBack({ delta: 1 });
         },
         handleARReady() {
             this.arReady = true;
-            // 清除超时检测
-            if (this.loadingTimeout) {
-                clearTimeout(this.loadingTimeout);
-                this.loadingTimeout = null;
-            }
             uni.showToast({
                 title: 'AR已就绪',
                 icon: 'success',
@@ -167,19 +133,16 @@ export default {
         },
         handleMarkerDetected(e) {
             this.isDetected = true;
-            console.log('Marker识别成功:', e.detail);
+            uni.showToast({
+                title: '物体识别成功',
+                icon: 'success',
+                duration: 2000
+            });
+            console.log('OSD识别成功:', e.detail);
         },
         handleMarkerLost(e) {
             this.isDetected = false;
-            console.log('Marker丢失:', e.detail);
-        },
-        handleARError(e) {
-            console.error('AR错误:', e.detail);
-            uni.showToast({
-                title: 'AR启动失败: ' + (e.detail.message || '未知错误'),
-                icon: 'none',
-                duration: 3000
-            });
+            console.log('物体丢失:', e.detail);
         }
     }
 };
@@ -195,10 +158,9 @@ export default {
     background: #000;
 }
 
-/* 扫描引导 */
 .scan-guide {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -208,17 +170,17 @@ export default {
 }
 
 .scan-frame {
-    width: 400rpx;
-    height: 400rpx;
+    width: 450rpx;
+    height: 450rpx;
     position: relative;
-    border: 2rpx solid rgba(78, 205, 196, 0.3);
+    border: 2rpx solid rgba(255, 179, 71, 0.3);
 }
 
 .scan-corner {
     position: absolute;
-    width: 40rpx;
-    height: 40rpx;
-    border-color: #4ECDC4;
+    width: 50rpx;
+    height: 50rpx;
+    border-color: #FFB347;
     border-style: solid;
 }
 
@@ -252,7 +214,7 @@ export default {
     left: 0;
     right: 0;
     height: 4rpx;
-    background: linear-gradient(90deg, transparent, #4ECDC4, transparent);
+    background: linear-gradient(90deg, transparent, #FFB347, transparent);
     animation: scan 2s linear infinite;
 }
 
@@ -270,36 +232,80 @@ export default {
     border-radius: 30rpx;
 }
 
-/* 识别成功提示 */
-.detected-toast {
+.info-card {
     position: absolute;
-    top: 200rpx;
+    top: 180rpx;
     left: 50%;
     transform: translateX(-50%);
+    width: 600rpx;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24rpx;
+    padding: 30rpx;
     z-index: 60;
+    box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
 }
 
-.toast-content {
+.card-header {
     display: flex;
     align-items: center;
-    background: rgba(82, 196, 26, 0.9);
-    padding: 20rpx 40rpx;
-    border-radius: 40rpx;
+    margin-bottom: 24rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
 }
 
-.toast-icon {
-    font-size: 32rpx;
-    color: white;
+.card-icon {
+    font-size: 48rpx;
     margin-right: 16rpx;
 }
 
-.toast-text {
-    font-size: 28rpx;
-    color: white;
+.card-title {
+    font-size: 32rpx;
     font-weight: bold;
+    color: #333;
 }
 
-/* 信息面板 */
+.card-body {
+    margin-bottom: 20rpx;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rpx 0;
+    border-bottom: 1rpx solid rgba(0, 0, 0, 0.05);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.info-value {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.info-value.success {
+    color: #52c41a;
+}
+
+.card-footer {
+    padding-top: 20rpx;
+    border-top: 2rpx solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 24rpx;
+    color: #999;
+}
+
 .info-panel {
     position: absolute;
     bottom: 40rpx;
@@ -376,36 +382,43 @@ export default {
     font-weight: bold;
 }
 
-.marker-preview {
+.osd-features {
     margin-bottom: 24rpx;
+    padding: 20rpx;
+    background: rgba(255, 179, 71, 0.1);
+    border-radius: 16rpx;
 }
 
-.preview-title {
-    font-size: 26rpx;
-    color: #666;
+.feature-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 16rpx;
     display: block;
 }
 
-.preview-image {
+.feature-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(78, 205, 196, 0.1);
-    border-radius: 16rpx;
-    padding: 30rpx;
-    border: 2rpx dashed #4ECDC4;
+    gap: 12rpx;
 }
 
-.preview-icon {
-    font-size: 64rpx;
-    margin-bottom: 12rpx;
+.feature-item {
+    display: flex;
+    align-items: flex-start;
 }
 
-.preview-text {
-    font-size: 24rpx;
-    color: #4ECDC4;
+.feature-dot {
+    font-size: 32rpx;
+    color: #FFB347;
+    margin-right: 12rpx;
+    line-height: 1;
+}
+
+.feature-text {
+    font-size: 26rpx;
+    color: #666;
+    flex: 1;
 }
 
 .info-tips {
@@ -425,7 +438,6 @@ export default {
     color: #666;
 }
 
-/* 加载状态 */
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -444,7 +456,7 @@ export default {
     width: 80rpx;
     height: 80rpx;
     border: 6rpx solid rgba(255, 255, 255, 0.3);
-    border-top-color: #4ECDC4;
+    border-top-color: #FFB347;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
