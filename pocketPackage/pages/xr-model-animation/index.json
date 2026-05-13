@@ -3,6 +3,6 @@
   "disableScroll": true,
   "usingComponents": {
     "yn-viewer": "plugin://yn-xrframe/yn-viewer",
-    "yn-ar": "plugin://yn-xrframe/yn-ar"
+    "yn-3d": "plugin://yn-xrframe/yn-3d"
   }
 }
