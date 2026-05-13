@@ -33,31 +33,93 @@ export default {
     data() {
         return {
             cardList: [
+                // 基于 XR-Frame官方文档 实现
                 {
                     id: 'xr-basic-scene',
                     title: '基础3D场景',
                     description: '立方体、灯光、纹理、环境天空盒',
                     icon: '🎲',
                     color: '#FF6B6B',
-                    tag: '入门',
+                    tag: '官方文档',
                     tagColor: '#FFE5E5',
                     url: '/pocketPackage/pages/xr-basic-scene/index'
                 },
+                // 基于 XR-Frame典型案例 实现
                 {
                     id: 'xr-marker-video',
                     title: 'AR扫描播放视频',
                     description: '扫描Marker图片播放视频内容',
                     icon: '📱',
                     color: '#4ECDC4',
-                    tag: 'AR',
+                    tag: '典型案例',
                     tagColor: '#E5F9F8',
                     url: '/pocketPackage/pages/xr-marker-video/index'
+                },
+                {
+                    id: 'xr-osd-marker',
+                    title: 'OSD物体识别',
+                    description: '识别特定角度的物体并展示信息',
+                    icon: '🎯',
+                    color: '#FFB347',
+                    tag: '典型案例',
+                    tagColor: '#FFF3E0',
+                    url: '/pocketPackage/pages/xr-osd-marker/index'
+                },
+                {
+                    id: 'xr-hand-tracking',
+                    title: '手部动作识别',
+                    description: '识别手部手势和动作',
+                    icon: '�',
+                    color: '#DDA0DD',
+                    tag: '典型案例',
+                    tagColor: '#F3E5F5',
+                    url: '/pocketPackage/pages/xr-hand-tracking/index'
+                },
+                {
+                    id: 'xr-model-animation',
+                    title: '模型动画',
+                    description: '播放模型动画，支持多种动画效果',
+                    icon: '�',
+                    color: '#96CEB4',
+                    tag: '典型案例',
+                    tagColor: '#E8F5E9',
+                    url: '/pocketPackage/pages/xr-model-animation/index'
+                },
+                {
+                    id: 'xr-hand-animation',
+                    title: '手部动画交互',
+                    description: '手势控制3D模型动画',
+                    icon: '🎮',
+                    color: '#667eea',
+                    tag: '典型案例',
+                    tagColor: '#E8E5FF',
+                    url: '/pocketPackage/pages/xr-hand-animation/index'
+                },
+                {
+                    id: 'xr-tracker-2d',
+                    title: '综合图片视频识别',
+                    description: '支持多目标图片识别和视频播放',
+                    icon: '📸',
+                    color: '#FF6B9D',
+                    tag: '⭐⭐⭐',
+                    tagColor: '#FFE5F0',
+                    url: '/pocketPackage/pages/xr-tracker-2d/index'
+                },
+                {
+                    id: 'xr-hand-product',
+                    title: '手部产品销售',
+                    description: 'AR虚拟试戴，手势交互购物',
+                    icon: '💍',
+                    color: '#FFD700',
+                    tag: '⭐⭐⭐',
+                    tagColor: '#FFF8DC',
+                    url: '/pocketPackage/pages/xr-hand-product/index'
                 },
                 {
                     id: 'xr-gltf-dynamic',
                     title: '动态模型加载',
                     description: '运行时动态加载不同glTF模型',
-                    icon: '🔄',
+                    icon: '�',
                     color: '#9C27B0',
                     tag: '⭐⭐⭐',
                     tagColor: '#F3E5F5',
@@ -67,7 +129,7 @@ export default {
                     id: 'xr-lighting',
                     title: '光照效果',
                     description: '多种光源类型与参数调节',
-                    icon: '💡',
+                    icon: '�',
                     color: '#FFD700',
                     tag: '⭐⭐⭐',
                     tagColor: '#FFF8DC',

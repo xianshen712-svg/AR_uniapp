@@ -38,6 +38,54 @@
 			}
 		},
 		{
+			"path": "pocketPackage/pages/xr-osd-marker/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-hand-tracking/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-model-animation/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-hand-animation/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-tracker-2d/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pocketPackage/pages/xr-hand-product/index",
+			"style": {
+				"navigationStyle": "custom",
+				"disableScroll": true,
+				"usingComponents": {}
+			}
+		},
+		{
 			"path": "pocketPackage/pages/camera/camera",
 			"style": {
 				"navigationBarTitleText": "",
