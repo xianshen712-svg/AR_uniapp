@@ -42,7 +42,7 @@ export default {
                     color: '#FF6B6B',
                     tag: '官方文档',
                     tagColor: '#FFE5E5',
-                    url: '/pocketPackage/pages/xr-basic-scene/index'
+                    url: '/xrPackage/pages/xr-basic-scene/index'
                 },
                 // 基于 XR-Frame典型案例 实现
                 {
@@ -53,7 +53,7 @@ export default {
                     color: '#4ECDC4',
                     tag: '典型案例',
                     tagColor: '#E5F9F8',
-                    url: '/pocketPackage/pages/xr-marker-video/index'
+                    url: '/xrPackage/pages/xr-marker-video/index'
                 },
                 {
                     id: 'xr-osd-marker',
@@ -63,7 +63,7 @@ export default {
                     color: '#FFB347',
                     tag: '典型案例',
                     tagColor: '#FFF3E0',
-                    url: '/pocketPackage/pages/xr-osd-marker/index'
+                    url: '/xrPackage/pages/xr-osd-marker/index'
                 },
                 {
                     id: 'xr-hand-tracking',
@@ -73,7 +73,7 @@ export default {
                     color: '#DDA0DD',
                     tag: '典型案例',
                     tagColor: '#F3E5F5',
-                    url: '/pocketPackage/pages/xr-hand-tracking/index'
+                    url: '/xrPackage/pages/xr-hand-tracking/index'
                 },
                 {
                     id: 'xr-model-animation',
@@ -83,7 +83,7 @@ export default {
                     color: '#96CEB4',
                     tag: '典型案例',
                     tagColor: '#E8F5E9',
-                    url: '/pocketPackage/pages/xr-model-animation/index'
+                    url: '/xrPackage/pages/xr-model-animation/index'
                 },
                 {
                     id: 'xr-hand-animation',
@@ -93,7 +93,7 @@ export default {
                     color: '#667eea',
                     tag: '典型案例',
                     tagColor: '#E8E5FF',
-                    url: '/pocketPackage/pages/xr-hand-animation/index'
+                    url: '/xrPackage/pages/xr-hand-animation/index'
                 },
                 {
                     id: 'xr-tracker-2d',
@@ -103,7 +103,7 @@ export default {
                     color: '#FF6B9D',
                     tag: '⭐⭐⭐',
                     tagColor: '#FFE5F0',
-                    url: '/pocketPackage/pages/xr-tracker-2d/index'
+                    url: '/xrPackage/pages/xr-tracker-2d/index'
                 },
                 {
                     id: 'xr-hand-product',
@@ -113,7 +113,7 @@ export default {
                     color: '#FFD700',
                     tag: '⭐⭐⭐',
                     tagColor: '#FFF8DC',
-                    url: '/pocketPackage/pages/xr-hand-product/index'
+                    url: '/xrPackage/pages/xr-hand-product/index'
                 },
                 {
                     id: 'xr-gltf-dynamic',
@@ -123,7 +123,7 @@ export default {
                     color: '#9C27B0',
                     tag: '⭐⭐⭐',
                     tagColor: '#F3E5F5',
-                    url: '/pocketPackage/pages/xr-gltf-dynamic/index'
+                    url: '/xrPackage/pages/xr-gltf-dynamic/index'
                 },
                 {
                     id: 'xr-lighting',
@@ -133,7 +133,7 @@ export default {
                     color: '#FFD700',
                     tag: '⭐⭐⭐',
                     tagColor: '#FFF8DC',
-                    url: '/pocketPackage/pages/xr-lighting/index'
+                    url: '/xrPackage/pages/xr-lighting/index'
                 }
             ]
         };

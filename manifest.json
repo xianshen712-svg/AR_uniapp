@@ -49,22 +49,20 @@
         },
         "usingComponents" : true,
         "lazyCodeLoading" : "requiredComponents",
+        "preloadRule" : {},
         "permission" : {
             "scope.userLocation" : {
                 "desc" : "你的位置信息将用于小程序位置接口的效果展示"
-            },
-            "scope.camera" : {
-                "desc" : "使用摄像头进行AR识别和实时预览"
             }
         },
+        "requiredPrivateInfos" : [],
         "plugins" : {
             "yn-xrframe" : {
                 "version" : "0.0.2",
                 "provider" : "wxf8a311db43355fea"
             }
         },
-        "requiredBackgroundModes" : [ "audio" ],
-        "deviceOrientation" : "portrait"
+        "requiredBackgroundModes" : [ "audio" ]
     },
     "mp-alipay" : {
         "usingComponents" : true

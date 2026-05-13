@@ -22,92 +22,12 @@
 			}
 		},
 		{
-			"path": "pocketPackage/pages/xr-basic-scene/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-marker-video/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-osd-marker/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-hand-tracking/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-model-animation/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-hand-animation/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-tracker-2d/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-hand-product/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
 			"path": "pocketPackage/pages/camera/camera",
 			"style": {
 				"navigationBarTitleText": "",
 				"disableScroll": true,
 				"navigationStyle": "custom",
 				"navigationBarTextStyle": "white",
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-gltf-dynamic/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-lighting/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
 				"usingComponents": {}
 			}
 		}
@@ -126,6 +46,91 @@
 				{
 					"path": "pages/selectPrinter/selectPrinter",
 					"style": {
+						"usingComponents": {}
+					}
+				}
+			]
+		},
+		{
+			"root": "xrPackage",
+			"pages": [
+				{
+					"path": "pages/xr-basic-scene/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-marker-video/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-osd-marker/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-hand-tracking/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-model-animation/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-hand-animation/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-tracker-2d/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-hand-product/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-gltf-dynamic/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
+						"usingComponents": {}
+					}
+				},
+				{
+					"path": "pages/xr-lighting/index",
+					"style": {
+						"navigationStyle": "custom",
+						"disableScroll": true,
 						"usingComponents": {}
 					}
 				}
