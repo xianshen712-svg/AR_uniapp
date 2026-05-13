@@ -34,84 +34,24 @@ export default {
         return {
             cardList: [
                 {
-                    id: 'basic-3d',
-                    title: '基础3D渲染',
-                    description: '展示基础3D几何体和材质效果',
+                    id: 'xr-basic-scene',
+                    title: '基础3D场景',
+                    description: '立方体、灯光、纹理、环境天空盒',
                     icon: '🎲',
                     color: '#FF6B6B',
-                    tag: '基础',
+                    tag: '入门',
                     tagColor: '#FFE5E5',
-                    url: '/pocketPackage/pages/xr-basic-3d/index'
+                    url: '/pocketPackage/pages/xr-basic-scene/index'
                 },
                 {
-                    id: 'ar-plane',
-                    title: 'AR平面检测',
-                    description: '识别水平面并放置3D物体',
+                    id: 'xr-marker-video',
+                    title: 'AR扫描播放视频',
+                    description: '扫描Marker图片播放视频内容',
                     icon: '📱',
                     color: '#4ECDC4',
                     tag: 'AR',
                     tagColor: '#E5F9F8',
-                    url: '/pocketPackage/pages/xr-ar-plane/index'
-                },
-                {
-                    id: 'gltf-model',
-                    title: 'glTF模型展示',
-                    description: '加载和展示glTF 3D模型',
-                    icon: '🤖',
-                    color: '#45B7D1',
-                    tag: '模型',
-                    tagColor: '#E5F3F8',
-                    url: '/pocketPackage/pages/xr-gltf-model/index'
-                },
-                {
-                    id: 'video-texture',
-                    title: '视频纹理',
-                    description: '在3D物体上播放视频',
-                    icon: '🎬',
-                    color: '#96CEB4',
-                    tag: '视频',
-                    tagColor: '#E8F5E9',
-                    url: '/pocketPackage/pages/xr-video-texture/index'
-                },
-                {
-                    id: 'hand-tracking',
-                    title: '手部动作识别',
-                    description: '识别手部手势和动作',
-                    icon: '👋',
-                    color: '#DDA0DD',
-                    tag: 'AI',
-                    tagColor: '#F3E5F5',
-                    url: '/pocketPackage/pages/xr-hand-tracking/index'
-                },
-                {
-                    id: 'image-marker',
-                    title: 'AR图片Marker',
-                    description: '识别特定图片并触发AR',
-                    icon: '🖼️',
-                    color: '#FFB347',
-                    tag: '识别',
-                    tagColor: '#FFF3E0',
-                    url: '/pocketPackage/pages/xr-image-marker/index'
-                },
-                {
-                    id: '3dof-tracking',
-                    title: '3DOF追踪',
-                    description: '3自由度头部追踪效果',
-                    icon: '🎯',
-                    color: '#87CEEB',
-                    tag: '追踪',
-                    tagColor: '#E1F5FE',
-                    url: '/pocketPackage/pages/xr-3dof-tracking/index'
-                },
-                {
-                    id: 'physics-engine',
-                    title: '物理引擎',
-                    description: '真实的物理碰撞和重力效果',
-                    icon: '⚡',
-                    color: '#F7DC6F',
-                    tag: '物理',
-                    tagColor: '#FEF9E7',
-                    url: '/pocketPackage/pages/xr-physics/index'
+                    url: '/pocketPackage/pages/xr-marker-video/index'
                 }
             ]
         };

@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"path": "pocketPackage/pages/xr-basic-3d/index",
+			"path": "pocketPackage/pages/xr-basic-scene/index",
 			"style": {
 				"navigationStyle": "custom",
 				"disableScroll": true,
@@ -30,66 +30,7 @@
 			}
 		},
 		{
-			"path": "pocketPackage/pages/xr-ar-plane/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-gltf-model/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xrframe/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {
-					"yn-viewer": "plugin://yn-xrframe/yn-viewer",
-					"yn-ar": "plugin://yn-xrframe/yn-ar"
-				}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-video-texture/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-hand-tracking/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-image-marker/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-3dof-tracking/index",
-			"style": {
-				"navigationStyle": "custom",
-				"disableScroll": true,
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pocketPackage/pages/xr-physics/index",
+			"path": "pocketPackage/pages/xr-marker-video/index",
 			"style": {
 				"navigationStyle": "custom",
 				"disableScroll": true,
